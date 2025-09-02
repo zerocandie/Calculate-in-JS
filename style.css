@@ -1,0 +1,110 @@
+/* style.css */
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', 'Arial', sans-serif;
+    background: #fdf6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    user-select: none;
+}
+
+h1#display {
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(212, 106, 139, 0.2);
+    border: 2px solid #f8c2d9;
+    width: 220px;
+    text-align: right;
+    transition: all 0.3s ease;
+    color: #d46a8b;
+    font-size: 2em;
+}
+
+.calculator {
+    background: #fff;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(180, 120, 180, 0.15);
+    border: 3px solid #f0c8e0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+button {
+    background: #e1bee7;
+    border: 0.5px solid #c2185b;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4a148c;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(194, 24, 188, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: #d1a7d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(194, 24, 188, 0.2);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 4px rgba(194, 24, 188, 0.1);
+}
+
+button.operator {
+    background: #c2185b;
+    color: white;
+}
+
+button#equals {
+    background: #9c27b0;
+    color: white;
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 15px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+button#equals:hover {
+    background: #7b1fa2;
+}
+
+/* Фейерверк */
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(20); opacity: 0; }
+}
